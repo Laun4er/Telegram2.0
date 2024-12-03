@@ -1,0 +1,27 @@
+﻿<Window x:Class="Telegram2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Telegram2"
+        mc:Ignorable="d"
+        Title="Telegram" Height="550" Width="850"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Content="Telegram 2.0" FontWeight="Bold" FontSize="20" HorizontalAlignment="Center"/>
+        <TextBlock Name="ChatHistory" Grid.Row="1" TextWrapping="Wrap" Margin="10"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Name="MessageBox" Grid.Column="0" Margin="10" KeyDown="MessageBox_KeyDown"/>
+            <Button Content="Отправить" Grid.Column="1" Margin="10" Click="SendButton_Click"/>
+        </Grid>
+    </Grid>
+</Window>
