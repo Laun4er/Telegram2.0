@@ -34,14 +34,13 @@ namespace Telegram2
         }
         private void MessageBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (ChatBox.Text == "")
-            {
-                MessageBox.Show("Нет сообщения");
-            }
-
-            else if (e.Key == Key.Enter)
+            if (e.Key == Key.Enter)
             {
                 SendMessage();
+                if (ChatBox.Text == "")
+                {
+                    MessageBox.Show("Нет сообщения");
+                }
             }
         }
         private void SendMessage() 
