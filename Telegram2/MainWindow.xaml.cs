@@ -2,6 +2,7 @@
 using System;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace Telegram2
 {
@@ -20,23 +21,35 @@ namespace Telegram2
                 ClearChatHistory();
             }
             else 
-            { 
-                SendMessage(); 
+            {
+                if (ChatBox.Text == "")
+                {
+                    MessageBox.Show("Нет сообщения");
+                }
+                else
+                { 
+                    SendMessage(); 
+                }
             } 
         }
         private void MessageBox_KeyDown(object sender, KeyEventArgs e)
-        { 
-            if (e.Key == Key.Enter) 
-            { 
-                SendMessage(); 
-            } 
+        {
+            if (ChatBox.Text == "")
+            {
+                MessageBox.Show("Нет сообщения");
+            }
+
+            else if (e.Key == Key.Enter)
+            {
+                SendMessage();
+            }
         }
         private void SendMessage() 
         {
-            string message = MessageBox.Text; if (!string.IsNullOrWhiteSpace(message)) 
+            string message = ChatBox.Text; if (!string.IsNullOrWhiteSpace(message)) 
             { 
                 ChatHistory.Text += message + "\n"; SaveMessage(message); 
-                MessageBox.Clear(); 
+                ChatBox.Clear(); 
             }
         }
         private void SaveMessage(string message)

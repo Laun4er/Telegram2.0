@@ -20,7 +20,7 @@
                 <ColumnDefinition Width="10*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBox Name="MessageBox" Grid.Column="0" Margin="10" KeyDown="MessageBox_KeyDown"/>
+            <TextBox Name="ChatBox" Grid.Column="0" Margin="10" KeyDown="MessageBox_KeyDown"/>
             <Button Content="Отправить" Grid.Column="1" Margin="10" Click="SendButton_Click"/>
         </Grid>
     </Grid>
